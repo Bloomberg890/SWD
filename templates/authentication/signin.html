@@ -27,14 +27,14 @@
     {% endfor %}
 
     <div class="row align-items-center">
-        <div class="col-md-5">
-            <div class="card" style="width: 100%; max-width: 37vw; height: auto;">
-                <img src="https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1496317899792-9d7dbcd928a1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
+        <div class="col-md-6">
+            <div class="image-container" style="width: 100%; max-width: 70vw; height: auto; margin-left:70px; margin-top: 50px;">
+                <img src="https://img.freepik.com/free-photo/school-students-digital-art-style-education-day_23-2151164386.jpg?t=st=1715750552~exp=1715754152~hmac=93482f42821c5ce1677160f7078de8d1ccf8254ebe83758cf88117115cd6306c&w=826" class="card-img-top" alt="..." style="object-fit: cover;">
             </div>
         </div>
         <div class="col-md-4 text-left">
-        <div class="container">
-            <form action="/home" method="post">  <!--/* form */ -->
+        <div class="container shadow p-4 mb-5 bg-body rounded" style="width: 100%; max-width: 70vw; height: auto; margin-left:70px; margin-top: 50px">
+            <form action="/signin/" method="post">  <!--/* form */ -->
                 {% csrf_token %}
                 <h2 style="margin-bottom: 20px;">Sign In</h2>
 

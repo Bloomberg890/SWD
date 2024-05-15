@@ -95,24 +95,26 @@ def activate(request,uidb64,token):
         return render(request,'activation_failed.html')
     
 def signin(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        pass1 = request.POST.get('pass1')
 
-        if request.method == "POST":
-            username = request.POST['username']
-            pass1 = request.POST['pass1']
-
-            user = authenticate(username=username, password=pass1)
+        if username and pass1:
+            user = authenticate(request, username=username, password=pass1)
 
             if user is not None:
                 login(request, user)
                 fname = user.first_name
-                return redirect("home")
-            
-            else:
-                messages.error(request, "Wrong Credentials")
                 return redirect("index")
-            
-        return render(request, "authentication/signin.html")
-    
+            else:
+                messages.error(request, "Bad Credentials")
+                return redirect("index")
+        else:
+            messages.error(request, "Please provide both username and password.")
+            return redirect("index")
+
+    return render(request, "authentication/signin.html")
+
 def signout(request):
     logout(request)
     messages.success(request, "Logged Out Successfully")
