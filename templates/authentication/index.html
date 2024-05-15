@@ -10,18 +10,27 @@
         body {
             overflow: hidden; /* Disable scrolling */
         }
+        .container {
+        margin-top: -25px; /* You can adjust the value as needed */
+        }
+        color-scheme
         .btn {
             font-weight: bold;
+        }
+        .card-img-top {
+            height: 100vh; /* Set the image height to 100% of the viewport height */
+            width: auto; /* Allow the width to adjust proportionally */
+            object-fit: cover; /* Maintain aspect ratio and cover entire container */
         }
     </style>
 </head>
 <body> <!-- Specify background image URL or color -->
     
     
-      <nav class="navbar navbar-expand-lg navbar-dark bg-black" style="height: 80px;">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-black" style="height: 70px;">
         <div class="container-fluid d-flex align-items-center">
           <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Tnea.png" alt="Logo" height="60" class="mr-3">
-          <a class="navbar-brand fs-3 fw-bold text-center mx-auto">Engineering Seat Allocation 2024</a>
+          <a class="navbar-brand fs-2 fw-bold text-center mx-auto">Engineering Seat Allocation 2024</a>
           <img src="https://www.nicepng.com/png/detail/944-9441929_anna-university-logo-png.png" alt="Logo" height="60" class="mr-3">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,37 +44,29 @@
     </div>
     
     {% endfor %}
-    
-        <div class="row align-items-center">
-            
-                <div class="col-md-5">
-                    <div class="card" style="width: 100%; max-width: 33vw; height: auto;">
-                        <img src="https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1496317899792-9d7dbcd928a1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="..." style="object-fit: cover;">
+    <div class="row align-items-center">
+        <div class="container p-4 mb-5 rounded d-flex justify-content-center align-items-center" style="width: 100%; min-height: 100vh;">
+            <div class="card mb-3" style="max-width: 70vw; max-height: auto; background-color: rgba(255, 255, 255, 0.7);">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="https://imagetolink.com/ib/WN8ilp4REV.png"  class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h2 class="card-title" style="margin-top: 150px; margin-bottom: 20px;">Welcome to Seat Allotment Portal</h2>
+                            <h5 class="card-text" style="margin-bottom: 40px;">Your gateway to securing your desired engineering program. Discover your future with streamlined application processes.</h5>
+                            <div class="d-grid gap-2 col-auto align-items-center" style="grid-template-columns: repeat(2, 1fr);">
+                                <a href="/signup/" class="btn btn-primary" type="button" style="margin-right: 20px;">Sign Up</a>
+                                <a href="/signin/" class="btn btn-secondary" type="button" style="margin-left: 20px; text-decoration: blanchedalmond;">Sign In</a>
+                            </div> 
+                        </div>
                     </div>
                 </div>
-                
-                
-                
-            <div class="col-md-6 text-left">
-                <div class="container shadow p-4 mb-5 bg-body rounded" style="width: 50vw; margin: auto;">
-                    {% if user.is_authenticated %}
-
-                        <h2>Hello, {{ fname }}</h2>
-                        <p>You're successfully logged in.</p>
-                        <a href="/signout/" class="btn btn-primary">Sign Out</a> <!-- Applied 'btn-primary' class -->
-
-                    {% else %}
-                    <h1 style="margin-bottom: 20px;">Welcome to Seat Allotment Portal</h1>
-                    <div class="d-grid gap-2 col-auto align-items-center" style="grid-template-columns: repeat(2, 1fr);">
-                        <a href="/signup/" class="btn btn-primary" type="button" style="margin-right: 20px;">Sign Up</a>
-                        <a href="/signin/" class="btn btn-secondary" type="button" style="margin-left: 20px; text-decoration: blanchedalmond;">Sign In</a>
-                    </div>  
-                </div>
             </div>
-            {% endif %}
         </div>
     </div>
-
+    
+        
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
