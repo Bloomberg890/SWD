@@ -12,7 +12,7 @@
             overflow: hidden; /* Disable scrolling */
         }
         .container {
-        margin-top: -0px; /* You can adjust the value as needed */
+        margin-top: -100px; /* You can adjust the value as needed */
         }
     </style>
 </head>
@@ -33,6 +33,7 @@
             </div>
         </div>
         <div class="col-md-4 text-left">
+        <div class="container">
             <form action="/home" method="post">  <!--/* form */ -->
                 {% csrf_token %}
                 <h2 style="margin-bottom: 20px;">Sign In</h2>
@@ -48,6 +49,7 @@
                
                 <button type="submit" class="btn btn-primary">Sign In</button>
             </form>
+        </div>
         </div>
     </div>
 

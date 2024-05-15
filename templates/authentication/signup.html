@@ -17,7 +17,7 @@
             overflow: hidden; /* Disable scrolling */
         }
         .container {
-        margin-top: -0px; /* You can adjust the value as needed */
+        margin-top: -100px; /* You can adjust the value as needed */
         }
         </style>
     </head>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-left">
-                    
+                    <div class="container" >
                     <form method="post" action="/signup/">
                         {% csrf_token %}
                         <h2 style="margin-bottom: 20px;">Sign Up</h2>
@@ -72,6 +72,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Sign Up</button>
                     </form>
+                </div>
                     </div>
             </div>
         <script src="" async defer></script>
