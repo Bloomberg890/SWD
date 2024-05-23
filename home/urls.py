@@ -12,4 +12,5 @@ urlpatterns = [
     path('seat', views.seat, name='seat'),
     path('apply', views.apply, name='apply'),
     path('apply2', views.apply2, name='apply2'),
+    path('success', views.success, name='success'),
 ]

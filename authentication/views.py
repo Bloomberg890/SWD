@@ -151,4 +151,5 @@ def apply(request):
 
 def apply2(request):
     return render(request, 'apply2.html')
+
     
