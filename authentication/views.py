@@ -24,6 +24,7 @@ def signup(request):
 
     if request.method == "POST":
         username = request.POST['username']
+        print(username)
         fname = request.POST['fname']
         lname = request.POST['lname']
         email = request.POST['email']
