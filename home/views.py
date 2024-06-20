@@ -55,6 +55,7 @@ def apply2(request):
         return render(request, 'apply2.html')
     return render(request, 'apply2.html')
 
+ 
 def success(request):
     if request.method == 'POST':
         # Extract data from the POST request
@@ -73,9 +74,12 @@ def success(request):
             # Create a new rank object associated with the candidate
             new_rank = rank(**data)
             new_rank.save()
+             # Fetch the entire rank list
+            rank_list = rank.objects.all().order_by('Rank')########
             return render(request, 'success.html', {
                 'random_no': new_rank.random_no,
-                'candidate_rank': new_rank.Rank
+                'candidate_rank': new_rank.Rank,
+                'rank_list': rank_list  #########
             })
         else:
             # If any required field is missing, re-render the success page with an error message
@@ -87,14 +91,17 @@ def success(request):
         if name:
             try:
                 rank_obj = rank.objects.get(name=name)
+                  # Fetch the entire rank list
+                rank_list = rank.objects.all().order_by('Rank')##########
                 return render(request, 'success.html', {
                     'random_no': rank_obj.random_no,
-                    'candidate_rank': rank_obj.Rank
+                    'candidate_rank': rank_obj.Rank,
+                    'rank_list': rank_list #########
                 })
             except rank.DoesNotExist:
                 return render(request, 'success.html', {'error': 'Rank not found.'})
         else:
-            return render(request, 'success.html')
+            return render(request,'success.html')
         """return render(request, 'success.html')"""
 """
 if request.method == 'POST':
