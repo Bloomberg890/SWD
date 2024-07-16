@@ -1,1 +1,1 @@
-This is Software Development Project using Djanog for Engineering Seat Allotment
+This is a Software Development Project using Django for Engineering Seat Allotment
