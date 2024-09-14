@@ -1,1 +1,1 @@
-This is a Software Development Project using Django for Engineering Seat Allotment
+This is a SoftWare Development (SWD) Project using Django for Engineering Seat Allotment
